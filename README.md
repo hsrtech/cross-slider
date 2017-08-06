@@ -1,5 +1,7 @@
 # Cross Slider - jQuery Plugin
 
+Demo - [https://github.com/hsrtech/cross-slider](https://github.com/hsrtech/cross-slider)
+
 *Using Cross Slider:*  
 
     $("#slides-collection").crossslider({
