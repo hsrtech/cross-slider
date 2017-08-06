@@ -14,7 +14,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
 --------------------------------------------- */
 
 (function($) {
-  $.fn.crossslide = function(options) {
+  $.fn.crossslider = function(options) {
     var slider = $(this);
 
     var settings = $.extend(
