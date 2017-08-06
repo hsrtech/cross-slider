@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cross Slider - by HSR Technologies</title>
+
+  <link href="cross-slider.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body>
+
+  <div id="slides-collection">
+
+    <div class="slide">
+      <div class="left-half" style="background-image: url(https://unsplash.it/200/300?image=1074);">
+        <div class="slide-content">
+          <p>Some text here...</p>
+        </div>
+      </div>
+      <div class="right-half" style="background-image: url(https://unsplash.it/200/300?image=1072);">
+        <div class="slide-content">
+          <p>Some text here...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="left-half" style="background-image: url(https://unsplash.it/200/300?image=1062);">2</div>
+      <div class="right-half" style="background-image: url(https://unsplash.it/200/300?image=1044);"></div>
+    </div>
+
+    <div class="slide">
+      <div class="left-half" style="background-image: url(https://unsplash.it/200/300?image=1025);">3</div>
+      <div class="right-half" style="background-image: url(https://unsplash.it/200/300?image=1011);"></div>
+    </div>
+
+    <div class="slide">
+      <div class="left-half" style="background-image: url(https://unsplash.it/200/300?image=1040);">4</div>
+      <div class="right-half" style="background-image: url(https://unsplash.it/200/300?image=1033);"></div>
+    </div>
+
+  </div>
+
+  <div id="nav">
+    <a href="#" class="next-slide">Next Slide</a>
+    <a href="#" class="prev-slide">Prev Slide</a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="cross-slider.js"></script>
+  <script>
+  $(document).ready(function() {
+    $("#slides-collection").crossslider();
+  });
+  </script>
+</body>
+</html>
