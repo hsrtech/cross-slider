@@ -2,14 +2,14 @@
 
 Demo - [https://github.com/hsrtech/cross-slider](https://github.com/hsrtech/cross-slider)
 
-*Using Cross Slider:*  
+**Using Cross Slider:**
 
     $("#slides-collection").crossslider({
         duration: 500,
         containerWidth: 1020
     });
 
-*Available Options:*  
+**Available Options:**
 
     duration: 1000, //Duration of animation in miliseconds.
     containerWidth: 1450, //container width to add max-width for content in slides.
@@ -27,3 +27,11 @@ Demo - [https://github.com/hsrtech/cross-slider](https://github.com/hsrtech/cros
     //CSS Classes
     active_slide: 'active',
     disabled_nav: 'disabled',
+
+
+**To Do:**
+* Make Responsive
+* Auto Play
+* Loop/Repeat slides
+* Go To Slide method
+* Dots navigation
