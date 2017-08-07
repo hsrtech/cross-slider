@@ -5,77 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cross Slider - by HSR Technologies</title>
-
+	
+  <link href="theme.css" rel="stylesheet" type="text/css" media="screen">	
   <link href="cross-slider.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
-
+<header class="container">
+	<h1>Cross Slider</h1>
+</header>
   <div id="slides-collection">
 
     <div class="slide">
-      <div class="left-half" style="background-image: url(https://unsplash.it/1000/400?image=1074);">
+      <div class="left-half" style="background-image:url(images/slider-img-1.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
+			<h2>Aladdin</h2>
+          <p>Aladdin, an urchin, falls in love with Princess Jasmine. He cannot marry her as she can only marry a prince.</p>
         </div>
       </div>
-      <div class="right-half" style="background-image: url(https://unsplash.it/1000/400?image=1072);">
+      <div class="right-half" style="background-image: url(images/slider-img-3.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="left-half" style="background-image: url(https://unsplash.it/1000/400?image=1062);">
-        <div class="slide-content">
-          <p>Some text here...</p>
-        </div>
-      </div>
-      <div class="right-half" style="background-image: url(https://unsplash.it/1000/400?image=1044);">
-        <div class="slide-content">
-          <p>Some text here...</p>
+         <h2>Bolt</h2>
+          <p>Bolt is a dog who stars in a superhit television show in which he possesses superpowers. He believes his powers are for real.</p>
         </div>
       </div>
     </div>
 
     <div class="slide">
-      <div class="left-half" style="background-image: url(https://unsplash.it/1000/400?image=1025);">
+      <div class="left-half" style="background-image: url(images/slider-img-5.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
+			<h2>Cars</h2>
+          <p>Lightning McQueen, a racing car, learns a hard lesson in life when he damages a lot of property in Radiator Springs.</p>
         </div>
       </div>
-      <div class="right-half" style="background-image: url(https://unsplash.it/1000/400?image=1011);">
+      <div class="right-half" style="background-image: url(images/slider-img-6.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
+			<h2>Lorem Ipsum</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         </div>
       </div>
     </div>
 
     <div class="slide">
-      <div class="left-half" style="background-image: url(https://unsplash.it/1000/400?image=1040);">
+      <div class="left-half" style="background-image: url(images/slider-img-2.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
+			<h2>Mulan</h2>
+          <p>Mulan disguises herself as a man to take her disabled father's place in the army.</p>
         </div>
       </div>
-      <div class="right-half" style="background-image: url(https://unsplash.it/1000/400?image=1033);">
+      <div class="right-half" style="background-image: url(images/slider-img-4.jpg);">
         <div class="slide-content">
-          <p>Some text here...</p>
+          <h2>Bolt</h2>
+          <p>Bolt is a dog who stars in a superhit television show in which he possesses superpowers. He believes his powers are for real.</p>
         </div>
       </div>
     </div>
+
+    <div class="slide">
+      <div class="left-half" style="background-image: url(images/slider-img-7.jpg);">
+        <div class="slide-content">
+			<h2>Minions</h2>
+          <p>Minions Kevin, Stuart and Bob decide to find a new master. They embark on a global trip and meet Scarlett Overkill.</p>
+        </div>
+      </div>
+      <div class="right-half" style="background-image: url(images/slider-img-8.jpg);">
+        <div class="slide-content">
+			<h2>Rio</h2>
+          <p>A bookshop owner, Linda, nurtures Blu, a macaw, after smugglers lose him in Minnesota. She takes him to Rio.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="nav">
+		<a href="#" class="next-slide">Next Slide</a>
+		<a href="#" class="prev-slide">Prev Slide</a>
+	  </div>
 
   </div>
 
-  <div id="nav">
-    <a href="#" class="next-slide">Next Slide</a>
-    <a href="#" class="prev-slide">Prev Slide</a>
-  </div>
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="cross-slider.js"></script>
   <script>
   $(document).ready(function() {
-    $("#slides-collection").crossslider();
+    $("#slides-collection").crossslider({
+		containerWidth: 1170
+	});
   });
   </script>
 </body>

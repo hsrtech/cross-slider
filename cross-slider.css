@@ -1,4 +1,3 @@
-
 #slides-collection {
   width: 100%;
   height: 400px;
@@ -39,7 +38,7 @@
   width: 100%;
   box-sizing: border-box;
   position: absolute;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .left-half .slide-content {
@@ -55,17 +54,3 @@
   margin: 0;
 }
 
-#nav {
-  text-align: center;
-}
-
-#nav a {
-  display: inline-block;
-  margin: 20px;
-  color: red;
-}
-
-#nav a.disabled {
-  color: grey;
-  cursor: not-allowed;
-}
