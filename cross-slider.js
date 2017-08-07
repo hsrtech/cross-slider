@@ -50,7 +50,8 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
 
     //check support for Clip Path property
     if (!areClipPathShapesSupported()) {
-      $(left_half, right_half).css({ width: "50%" });
+      $(left_half).css({ width: "50%" });
+	  $(right_half).css({ width: "50%" });
     }
 
     function setContentWidth() {
