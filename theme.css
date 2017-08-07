@@ -23,6 +23,8 @@ header a {
 	max-width: 1170px;
 	width: 100%;
 	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 20px;
 }
 
 .slide-content {

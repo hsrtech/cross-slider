@@ -45,11 +45,13 @@
 
 .left-half .slide-content {
   top: 0;
+	padding-left: 20px;
 }
 
 .right-half .slide-content {
  text-align: right;
  bottom: 0;
+	padding-right: 20px;
 }
 
 .slide-content p {
