@@ -51,7 +51,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
     //check support for Clip Path property
     if (!areClipPathShapesSupported()) {
       $(left_half).css({ width: "50%" });
-	  $(right_half).css({ width: "50%" });
+	    $(right_half).css({ width: "50%" });
     }
 
     function setContentWidth() {
@@ -84,13 +84,13 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       //animate slide in for current slide
       $(slider).find("."+settings.active_slide).find(left_half).animate(
         {
-          left: "0"
+          left: "0%"
         },
         settings.duration
       );
       $(slider).find("."+settings.active_slide).find(right_half).animate(
         {
-          right: "0"
+          right: "0%"
         },
         settings.duration
       );

@@ -27,10 +27,12 @@
 
 .left-half {
   left: -61%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 65% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 65% 100%, 0% 100%);
 }
 .right-half {
   right: -61%;
+  -webkit-clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -53,4 +55,3 @@
 .slide-content p {
   margin: 0;
 }
-
