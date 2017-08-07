@@ -6,10 +6,22 @@ body {
 }
 
 header {
-	padding: 0 20px;
+	padding: 0;
+}
+
+header h1 {
+	float: left;
+}
+
+header a {
+	color: #000;
+	text-decoration: none;
+	float: right;
+	margin-top: 33px;
 }
 .container {
-	width: 1170px;
+	max-width: 1170px;
+	width: 100%;
 	margin: 0 auto;
 }
 
