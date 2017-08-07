@@ -5,6 +5,20 @@ body {
 	font-family: 'Roboto Slab', serif;
 }
 
+.container {
+	max-width: 1170px;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 20px;
+}
+
+a {
+	color: #39b54a;
+	text-decoration: none;
+}
+
+/* Header */
 header {
 	padding: 0;
 }
@@ -14,19 +28,11 @@ header h1 {
 }
 
 header a {
-	color: #000;
-	text-decoration: none;
 	float: right;
 	margin-top: 33px;
 }
-.container {
-	max-width: 1170px;
-	width: 100%;
-	margin: 0 auto;
-	box-sizing: border-box;
-	padding: 0 20px;
-}
 
+/* Slider Design Styling */
 .slide-content {
 	text-shadow: 1px 1px 2px rgba(0,0,0,.7);
 }
@@ -70,4 +76,38 @@ header a {
 
 #nav a.disabled {
   display: none;
+}
+
+/* Featured Column */
+section {
+	overflow: hidden;
+	margin: 50px 0;
+}
+.features-col {
+	display: inline-block;
+	width: 28.5%;
+	margin: 2%;
+	text-align: center;
+	line-height: 1.6;
+	vertical-align: top;
+}
+
+.features-col img {
+	max-width: 20%;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Footer */
+footer {
+	padding: 20px;
+	text-align: center;
+	border-top: 1px solid #ccc;
+}
+
+@media screen and (max-width: 768px) {
+	.features-col {
+		width: 96%;
+	}
 }
