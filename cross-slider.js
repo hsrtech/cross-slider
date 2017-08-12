@@ -39,9 +39,25 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       options
     );
 
+    //Crate an array of slide objects
+    var slides = [];
     $(settings.slides).each(function(index) {
-      $(this).css({ "z-index": index });
+      slides.push({
+        slide: $(this),
+        index: index
+      });
     });
+
+    //reprint slides
+    function printSlides() {
+      slider.empty();
+
+      slides.forEach(function(currentSlide) {
+        currentSlide.slide.appendTo(slider).css({'z-index': currentSlide.index});
+      });
+    }
+    printSlides();
+
 
     //List of elements:
     var left_half = $(settings.left_half);
