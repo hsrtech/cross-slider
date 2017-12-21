@@ -71,7 +71,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       $(settings.next_button).addClass(settings.disabled_nav);
     }
 
-    printSlides();
+    printSlides(slides);
 
     setContentWidth();
     $(window).on("resize", setContentWidth);
@@ -81,7 +81,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
 
     //-----------------------
     //reprint slides
-    function printSlides() {
+    function printSlides(slides) {
       slider.empty();
 
       slides.forEach(function(currentSlide) {
@@ -104,17 +104,17 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
     }
 
     //-----------------------
-    function prepareNextSlide() {
+    function prepareNextSlide(slides) {
       //pop removes the last element, unshift add an element at the beginning
-      slides = slides.unshift(slides.pop());
-      printSlides();
+      slides.unshift(slides.pop());
+      printSlides(slides);
     }
 
     //-----------------------
-    function preparePrevSlide() {
+    function preparePrevSlide(slides) {
       //shift removes the first element, push adds an element at the end.
-      slides = slides.push(slides.shift());
-      printSlides();
+      slides.push(slides.shift());
+      printSlides(slides);
     }
 
     //-----------------------
@@ -191,10 +191,12 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
         var i = el.data('index');
         slides[i].active = false;
         slides[i+1].active = true;
+        slides[next].active = true;
         el.removeClass(settings.active_slide);
         el.next(settings.slides).addClass(settings.active_slide);
       }
       slideIn();
+      prepareNextSlide(slides);
     });
 
     //-----------------------
