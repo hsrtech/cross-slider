@@ -44,19 +44,11 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
     $(settings.slides).each(function(index) {
       slides.push({
         slide: $(this),
-        index: index
+        index: index,
+        active: false,
       });
     });
-
-    //reprint slides
-    function printSlides() {
-      slider.empty();
-
-      slides.forEach(function(currentSlide) {
-        currentSlide.slide.appendTo(slider).css({'z-index': currentSlide.index});
-      });
-    }
-    printSlides();
+    slides[0].active = true;
 
 
     //List of elements:
@@ -67,9 +59,40 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
     //check support for Clip Path property
     if (!areClipPathShapesSupported()) {
       $(left_half).css({ width: "50%" });
-	    $(right_half).css({ width: "50%" });
+      $(right_half).css({ width: "50%" });
     }
 
+    //-----------------------
+    //prepare slides for first load.
+    if($(settings.slides).length > 1) {
+      $(settings.prev_button).addClass(settings.disabled_nav);
+    } else {
+      $(settings.prev_button).addClass(settings.disabled_nav);
+      $(settings.next_button).addClass(settings.disabled_nav);
+    }
+
+    printSlides();
+
+    setContentWidth();
+    $(window).on("resize", setContentWidth);
+
+    //show first slide on page load.
+    slideIn();
+
+    //-----------------------
+    //reprint slides
+    function printSlides() {
+      slider.empty();
+
+      slides.forEach(function(currentSlide) {
+        currentSlide.slide.appendTo(slider).css({'z-index': currentSlide.index}).attr('data-index', currentSlide.index);
+        if(currentSlide.active) {
+          $(settings.slides).last().addClass(settings.active_slide);
+        }
+      });
+    }
+
+    //-----------------------
     function setContentWidth() {
       if ($(window).width() > settings.containerWidth) {
         var offset = ($(window).width() - settings.containerWidth) / 2;
@@ -80,22 +103,21 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       $(right_half).find(content).css({ right: offset + "px" });
     }
 
-    setContentWidth();
-    $(window).on("resize", setContentWidth);
-
-    //Add active class on first slide.
-    $(settings.slides).first().addClass(settings.active_slide);
-
-    if($(settings.slides).length > 1) {
-      $(settings.prev_button).addClass(settings.disabled_nav);
-    } else {
-      $(settings.prev_button).addClass(settings.disabled_nav);
-      $(settings.next_button).addClass(settings.disabled_nav);
+    //-----------------------
+    function prepareNextSlide() {
+      //pop removes the last element, unshift add an element at the beginning
+      slides = slides.unshift(slides.pop());
+      printSlides();
     }
 
-    //show first slide on page load.
-    slideIn();
+    //-----------------------
+    function preparePrevSlide() {
+      //shift removes the first element, push adds an element at the end.
+      slides = slides.push(slides.shift());
+      printSlides();
+    }
 
+    //-----------------------
     function slideIn() {
       //animate slide in for current slide
       $(slider).find("."+settings.active_slide).find(left_half).animate(
@@ -130,6 +152,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       }
     }
 
+    //-----------------------
     function slideOut() {
       //fadein and scale up previous slide
       $(slider).find("."+settings.active_slide).prev(settings.slides).css({
@@ -160,22 +183,30 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       }
     }
 
+    //-----------------------
     $(settings.next_button).on("click", function(e) {
       e.preventDefault();
       var el = $("."+settings.active_slide);
       if (el.next(settings.slides).length > 0) {
+        var i = el.data('index');
+        slides[i].active = false;
+        slides[i+1].active = true;
         el.removeClass(settings.active_slide);
         el.next(settings.slides).addClass(settings.active_slide);
       }
       slideIn();
     });
 
+    //-----------------------
     $(settings.prev_button).on("click", function(e) {
       e.preventDefault();
       var el = $("."+settings.active_slide);
 
       if (el.prev(settings.slides).length > 0) {
         slideOut();
+        var i = el.data('index');
+        slides[i].active = false;
+        slides[i-1].active = true;
         el.removeClass(settings.active_slide);
         el.prev(settings.slides).addClass(settings.active_slide);
       }
@@ -186,6 +217,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
       }
     });
 
+    //-----------------------
     //function to detect support for Clip Path property
     function areClipPathShapesSupported() {
       var base = "clipPath",
